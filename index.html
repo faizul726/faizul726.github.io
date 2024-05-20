@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Price Calculator</title>
+    <script>
+        function calculate() {
+            // Get input values
+            let productPrice = parseFloat(document.getElementById('productPrice').value) || 0;
+            let usdtRate = parseFloat(document.getElementById('usdtRate').value) || 0;
+
+            // Calculate Redotpay USD
+            let rdtUsd = productPrice + (productPrice * 0.01);
+            document.getElementById('rdtUsd').innerHTML = `<strong>${rdtUsd.toFixed(2)}</strong> = ${productPrice.toFixed(2)} + ${(productPrice * 0.01).toFixed(2)}`;
+
+            // Calculate Binance P2P w/ fee
+            let binanceUsdt = (rdtUsd + (rdtUsd * 0.01)) + 0.05;
+            document.getElementById('binanceUsdt').innerHTML = `<strong>${binanceUsdt.toFixed(2)}</strong> = ${rdtUsd.toFixed(2)} + ${(rdtUsd * 0.01).toFixed(2)} + 0.05`;
+
+            // Calculate Final cost
+            let finalCost = (binanceUsdt * usdtRate) + ((binanceUsdt * usdtRate) * 0.0185);
+            document.getElementById('finalCost').innerHTML = `<strong>${finalCost.toFixed(2)}</strong> = ${(binanceUsdt * usdtRate).toFixed(2)} + ${((binanceUsdt * usdtRate) * 0.0185).toFixed(2)}`;
+
+            // Round final cost to nearest value ending in 0 or 5
+            let roundedFinalCost = Math.ceil(finalCost / 5) * 5;
+            document.getElementById('roundedFinalCost').innerHTML = `<strong>${roundedFinalCost.toFixed(2)}</strong>`;
+        }
+
+        window.onload = function() {
+            // Add event listeners for live calculations
+            document.getElementById('productPrice').addEventListener('input', calculate);
+            document.getElementById('usdtRate').addEventListener('input', calculate);
+        }
+    </script>
+</head>
+<body>
+<h2>Crypto cost calculator (Bkash)</h2>
+<h6>Made using ChatGPT 4o | 20240520_2034</h6>
+    <div>
+        <label for="productPrice">Product Price: </label>
+        <input type="number" id="productPrice" name="productPrice" step="0.01">
+    </div><br>
+    <div>
+        <label for="usdtRate">USDT Rate: </label>
+        <input type="number" id="usdtRate" name="usdtRate" step="0.01">
+    </div>
+    <br><hr><br>
+    <p>Redotpay USD: <span id="rdtUsd"><strong>0.00</strong> = 0.00 + 0.00</span></p>
+    <p>Binance P2P w/ fee: <span id="binanceUsdt"><strong>0.00</strong> = 0.00 + 0.00 + 0.05</span></p>
+    <p>Final cost: <span id="finalCost"><strong>0.00</strong> = 0.00 + 0.00</span></p>
+    <p>Rounded final cost: <span id="roundedFinalCost"><strong>0.00</strong></span></p>
+</body>
+</html>
