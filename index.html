@@ -28,10 +28,10 @@
         }
         function withCashoutFeeCalc() {
             // Get input value for Y
-            var withCashoutFee = parseFloat(document.getElementById('withCashoutFee').value) || 0;
+            let withCashoutFee = parseFloat(document.getElementById('withCashoutFee').value) || 0;
 
             // Calculate the output value which when 1% is added gives Y
-            var outputValue = withCashoutFee / 1.0185;
+            let outputValue = withCashoutFee / 1.0185;
             document.getElementById('withCashoutFeeOutput').innerHTML = `<strong>৳${outputValue.toFixed(2)}</strong>`;
         }
     </script>
