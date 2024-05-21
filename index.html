@@ -28,18 +28,11 @@
         }
         function withCashoutFeeCalc() {
             // Get input value for Y
-            let withCashoutFee = parseFloat(document.getElementById('withCashoutFee').value) || 0;
+            var withCashoutFee = parseFloat(document.getElementById('withCashoutFee').value) || 0;
 
             // Calculate the output value which when 1% is added gives Y
-            let outputValue = withCashoutFee / 1.0185;
+            var outputValue = withCashoutFee / 1.0185;
             document.getElementById('withCashoutFeeOutput').innerHTML = `<strong>৳${outputValue.toFixed(2)}</strong>`;
-        }
-
-        window.onload = function() {
-            // Add event listeners for live calculations
-            document.getElementById('productPrice').addEventListener('input', calculate);
-            document.getElementById('usdtRate').addEventListener('input', calculate);
-            document.getElementById('withCashoutFee').addEventListener('input', withCashoutFeeCalc);
         }
     </script>
 </head>
@@ -49,11 +42,11 @@
     <h6>Last updated: 20240521_1032</h6>
     <div>
         <label for="productPrice">Product price ($): </label>
-        <input type="number" id="productPrice" name="productPrice" step="0.01">
+        <input type="number" id="productPrice" name="productPrice" step="0.01" oninput="calculate()">
     </div><br>
     <div>
         <label for="usdtRate">USDT rate (৳): </label>
-        <input type="number" id="usdtRate" name="usdtRate" step="0.01">
+        <input type="number" id="usdtRate" name="usdtRate" step="0.01" oninput="calculate()">
     </div>
     <br><hr><br>
     <p>Redotpay USD: <span id="rdtUsd"></span></p>
@@ -66,7 +59,7 @@
 <h2>w/ Cashout Fee Calculator</h2>
 <div>
     <label for="withCashoutFee">Spend amount: </label>
-    <input type="number" id="withCashoutFee" step="0.01">
+    <input type="number" id="withCashoutFee" step="0.01" oninput="withCashoutFeeCalc()">
 </div><br>
 <p>Bkash cost: <span id="withCashoutFeeOutput"></span></p>
 </body>
