@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generate Link</title>
+</head>
+<body>
+<h2>Generate Store Link</h2>
+<form onsubmit="generateLink(); return false;">
+  <label for="inputString">Enter Product ID:</label>
+  <input type="text" id="inputString" name="productid" pattern="[A-Za-z0-9]+" required title="Input should only contain letters and numbers">
+  <button type="submit">Generate Link</button>
+</form>
+<div id="result"></div>
+
+<script>
+function generateLink() {
+  var inputString = document.getElementById("inputString").value;
+  var link = "ms-windows-store://pdp?productid=" + inputString;
+  document.getElementById("result").innerHTML = "<a href='" + link + "'>" + link + "</a>";
+}
+</script>
+<br><br>
+<a href="ms-windows-store://pdp?productid=9wzdncrf0083">Minecraft for Windows</a><br>
+<a href="https://example.com">Minecraft Preview</a><br>
+<a href="https://example.com">Microsoft Store</a><br>
+</body>
+</html>
