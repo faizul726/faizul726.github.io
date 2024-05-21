@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Price Calculator</title>
+    <title>Crypto Cost Calculator</title>
     <script>
         function calculate() {
             // Get input values
@@ -12,7 +12,7 @@
 
             // Calculate Redotpay USD
             let rdtUsd = productPrice + (productPrice * 0.01);
-            document.getElementById('rdtUsd').innerHTML = `<strong>${rdtUsd.toFixed(2)}</strong> = ${productPrice.toFixed(2)} + ${(productPrice * 0.01).toFixed(2)}`;
+            document.getElementById('rdtUsd').innerHTML = `<strong>$${rdtUsd.toFixed(2)}</strong> = ${productPrice.toFixed(2)} + ${(productPrice * 0.01).toFixed(2)}`;
 
             // Calculate Binance P2P w/ fee
             let binanceUsdt = (rdtUsd + (rdtUsd * 0.01)) + 0.05;
@@ -24,31 +24,50 @@
 
             // Round final cost to nearest value ending in 0 or 5
             let roundedFinalCost = Math.ceil(finalCost / 5) * 5;
-            document.getElementById('roundedFinalCost').innerHTML = `<strong>${roundedFinalCost.toFixed(2)}</strong>`;
+            document.getElementById('roundedFinalCost').innerHTML = `<strong>৳${roundedFinalCost.toFixed(0)}</strong>`;
+        }
+        function withCashoutFeeCalc() {
+            // Get input value for Y
+            let withCashoutFee = parseFloat(document.getElementById('withCashoutFee').value) || 0;
+
+            // Calculate the output value which when 1% is added gives Y
+            let outputValue = withCashoutFee / 1.0185;
+            document.getElementById('withCashoutFeeOutput').innerHTML = `<strong>৳${outputValue.toFixed(2)}</strong>`;
         }
 
         window.onload = function() {
             // Add event listeners for live calculations
             document.getElementById('productPrice').addEventListener('input', calculate);
             document.getElementById('usdtRate').addEventListener('input', calculate);
+            document.getElementById('withCashoutFee').addEventListener('input', withCashoutFeeCalc);
         }
     </script>
 </head>
 <body>
-<h2>Crypto cost calculator (Bkash)</h2>
+<h2>Crypto Cost Calculator (Bkash)</h2>
 <h6>Made using ChatGPT 4o | 20240520_2034</h6>
+    <h6>Last updated: 20240521_1032</h6>
     <div>
-        <label for="productPrice">Product Price: </label>
+        <label for="productPrice">Product Price ($): </label>
         <input type="number" id="productPrice" name="productPrice" step="0.01">
     </div><br>
     <div>
-        <label for="usdtRate">USDT Rate: </label>
+        <label for="usdtRate">USDT Rate (৳): </label>
         <input type="number" id="usdtRate" name="usdtRate" step="0.01">
     </div>
     <br><hr><br>
-    <p>Redotpay USD: <span id="rdtUsd"><strong>0.00</strong> = 0.00 + 0.00</span></p>
-    <p>Binance P2P w/ fee: <span id="binanceUsdt"><strong>0.00</strong> = 0.00 + 0.00 + 0.05</span></p>
-    <p>Final cost: <span id="finalCost"><strong>0.00</strong> = 0.00 + 0.00</span></p>
-    <p>Rounded final cost: <span id="roundedFinalCost"><strong>0.00</strong></span></p>
+    <p>Redotpay USD: <span id="rdtUsd"></span></p>
+    <p>Binance P2P w/ fee: <span id="binanceUsdt"></span></p>
+    <p>Final cost: <span id="finalCost"></span></p>
+    <p>Rounded final cost: <span id="roundedFinalCost"><strong></strong></span></p>
+    
+<br><hr><br>
+
+<h2>w/ Cashout Fee Calculator</h2>
+<div>
+    <label for="withCashoutFee">Spend amount: </label>
+    <input type="number" id="withCashoutFee" step="0.01">
+</div><br>
+<p>Bkash cost: <span id="withCashoutFeeOutput"></span></p>
 </body>
 </html>
