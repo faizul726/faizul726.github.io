@@ -19,7 +19,7 @@
             document.getElementById('binanceUsdt').innerHTML = `<strong>${binanceUsdt.toFixed(2)}</strong> = ${rdtUsd.toFixed(2)} + ${(rdtUsd * 0.01).toFixed(2)} + 0.05`;
 
             // Calculate Final cost
-            let finalCost = (binanceUsdt * usdtRate) + (binanceUsdt * usdtRate) * 0.0185);
+            let finalCost = (binanceUsdt * usdtRate) + ((binanceUsdt * usdtRate) * 0.0185);
             document.getElementById('finalCost').innerHTML = `<strong>${finalCost.toFixed(2)}</strong> = ${(binanceUsdt * usdtRate).toFixed(2)} + ${((binanceUsdt * usdtRate) * 0.0185).toFixed(2)}`;
 
             // Round final cost to nearest value ending in 0 or 5
