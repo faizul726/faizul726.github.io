@@ -19,7 +19,7 @@
             document.getElementById('binanceUsdt').innerHTML = `<strong>${binanceUsdt.toFixed(2)}</strong> = ${rdtUsd.toFixed(2)} + ${(rdtUsd * 0.01).toFixed(2)} + 0.05`;
 
             // Calculate Final cost
-            let finalCost = (binanceUsdt * usdtRate) * 0.0185);
+            let finalCost = (binanceUsdt * usdtRate) + (binanceUsdt * usdtRate) * 0.0185);
             document.getElementById('finalCost').innerHTML = `<strong>${finalCost.toFixed(2)}</strong> = ${(binanceUsdt * usdtRate).toFixed(2)} + ${((binanceUsdt * usdtRate) * 0.0185).toFixed(2)}`;
 
             // Round final cost to nearest value ending in 0 or 5
@@ -53,8 +53,8 @@
     <p>Binance P2P w/ fee: <span id="binanceUsdt"></span></p>
     <p>Final cost: <span id="finalCost"></span></p>
     <p>Rounded final cost: <span id="roundedFinalCost"><strong></strong></span></p>
-    <p><i>Alternatively, if bkash cashout fee is 1.85% you can simply add 3.897185% to your product price and multiply it by dollar rate. You will get all cost including cashout fee. (don't forget $0.05 service fee)</i></p>
-    <p><i>If product price is 10. The math would be: (10+3.897185%)+(0.05+1.897</i></p>
+    <p><i>Alternatively, if bkash cashout fee is 1.85% you can simply add 3.897185% to your product price and multiply it by dollar rate. You will get all cost including cashout fee.</i></p>
+    <p><i>If product price is 10. The math would be: (10+3.897185%) this will give you the charge. But this excludes $0.05 extra charge so always load a bit higher.</i></p>
 <br><hr><br>
 
 <h2>w/ Cashout Fee Calculator</h2>
