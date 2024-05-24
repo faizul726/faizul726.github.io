@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moinkraft</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            display: none;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            margin-bottom: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 120px;
+            overflow: hidden;
+        }
+        .loading-dot::after {
+            content: ' .';
+            animation: loading 1s infinite;
+        }
+        @keyframes loading {
+            0% { content: ' .'; }
+            25% { content: ' ..'; }
+            50% { content: ' ...'; }
+            100% { content: ' .'; }
+        }
+        .footer {
+            font-size: 80%;
+            margin-top: 20px;
+        }
+        .logs-container {
+            display: block;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #300a24;
+            color: #ffffff;
+            max-height: 120px;
+            overflow-y: auto;
+            font-size: 80%;
+            min-height: 120px;
+        }
+        .logs-container p:last-child {
+            margin-bottom: 0;
+        }
+        .logs-container-empty {
+            text-align: center;
+            color: #ffffff;
+            margin: 0;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Moinkraft Downloader (API by <a href="https://zihao-il.github.io/" target="_blank">zihao-il</a>)</h2>
+  <h3>মুরগি খায় ধান তুমি আমার জান 🐸🤧</h3>
+<div class="footer">ⓘ Made using ChatGPT | 20240507_1435.</div>
+<hr>
+<p><b>ARMv7 (32 bit):</b> 4 GB RAM or less.</p>
+<p><b>ARMv8 (64 bit):</b> More than 4 GB RAM.</p>
+<p><span style="font-family: 'Courier New', Courier, monospace;">Note: Device with 4 GB or less RAM can be 64 bit too. Check what your device supports using this <a href="https://play.google.com/store/apps/details?id=com.danielpolish.a64bitchecker" target="_blank">app</a>.</span></p>
+
+<button onclick="fetchData()">Fetch</button>
+
+<div class="logs-container" id="logsContainer">
+    <p class="logs-container-empty">Logs will show up here</p>
+</div>
+
+<table id="dataTable">
+    <thead>
+        <tr>
+            <th>Version</th>
+            <th>Is beta?</th>
+            <th>Upload time (GMT+6)</th>
+            <th>File size</th>
+            <th>Links</th>
+        </tr>
+    </thead>
+    <tbody id="data"></tbody>
+</table>
+
+<script>
+    const fetchButton = document.querySelector('button');
+    const table = document.getElementById('dataTable');
+    const logsContainer = document.getElementById('logsContainer');
+    let logsShown = false;
+    const maxLogs = 5;
+
+    function fetchData() {
+        fetchButton.textContent = 'Fetching';
+        fetchButton.disabled = true;
+        fetchButton.classList.add('loading-dot');
+        table.style.display = 'none';
+        log('[POST] Sending request...');
+        const start = performance.now();
+        fetch('http://bbk.endyun.ltd:9000/api/last_version', {
+            method: 'POST'
+        })
+        .then(response => {
+            const end = performance.now();
+            const elapsedTime = (end - start).toFixed(2);
+            log(`Response received. Status: ${response.status} (took ${elapsedTime} ms)`);
+            return response.json();
+        })
+        .then(data => {
+            const tableBody = document.getElementById('data');
+            tableBody.innerHTML = '';
+            data.message.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><b>${item.version_all}</b></td>
+                    <td>${item.is_beta ? 'Yes' : 'No'}</td>
+                    <td>${new Date(item.update_time).toLocaleString('en-US', {timeZone: 'Asia/Dhaka'})}</td>
+                    <td>${generateFileSize(item.file_size)}</td>
+                    <td>${generateLinks(item.link)}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+            fetchButton.textContent = 'Fetch';
+            fetchButton.disabled = false;
+            fetchButton.classList.remove('loading-dot');
+            table.style.display = 'table';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            log('Error occurred: ' + error);
+            fetchButton.textContent = 'Retry/Reload';
+            fetchButton.disabled = false;
+            fetchButton.classList.remove('loading-dot');
+        });
+    }
+
+    function generateFileSize(fileSize) {
+        const [armv7Size, armv8Size] = fileSize.split('/');
+        return `<b>ARMv7:</b> ${armv7Size}<br><b>ARMv8:</b> ${armv8Size}`;
+    }
+
+    function generateLinks(links) {
+        const linkObj = JSON.parse(links);
+        let html = '';
+        for (const [provider, versions] of Object.entries(linkObj)) {
+            html += `<b>${provider}${getHostingType(provider)}:</b><br>`;
+            let armv7Added = false;
+            for (const [version, url] of Object.entries(versions)) {
+                if (version.includes('ARMv7') && !armv7Added) {
+                    html += `<a href="${url}" target="_blank"><b>ARMv7 (32 bit)</b></a><br>`;
+                    armv7Added = true;
+                } else if (version.includes('ARMv8')) {
+                    html += `<a href="${url}" target="_blank"><b>ARMv8 (64 bit)</b></a><br>`;
+                } else {
+                    html += `<a href="${url}" target="_blank"><b>${version}</b></a><br>`;
+                }
+            }
+        }
+        return html;
+    }
+
+    function getHostingType(provider) {
+        if (provider === 'OneDrive_E5') {
+            return ' (Direct Download)';
+        } else if (provider === 'OneDrive_365') {
+            return ' (More Options)';
+        } else {
+            return '';
+        }
+    }
+
+    function log(message) {
+        const timestamp = new Date().toLocaleTimeString('en-US');
+        const elapsedTime = performance.now() - window.performance.timing.navigationStart;
+        const logMessage = `<p>[${timestamp}] ${message} (took ${elapsedTime.toFixed(2)} ms)</p>`;
+        if (logsShown) {
+            logsContainer.insertAdjacentHTML('beforeend', logMessage);
+            const logs = logsContainer.querySelectorAll('p');
+            if (logs.length > maxLogs) {
+                logsContainer.removeChild(logs[0]);
+            }
+        } else {
+            logsContainer.innerHTML = logMessage;
+            logsShown = true;
+        }
+        logsContainer.scrollTop = logsContainer.scrollHeight;
+    }
+</script>
+
+</body>
+</html>
