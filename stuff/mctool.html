@@ -3,39 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Interaction</title>
+    <title>API Request</title>
 </head>
 <body>
-    <h1>Get Last Version</h1>
-    <button id="fetchDataButton">Fetch Data</button>
-    <pre id="result"></pre>
+    <h1>API Response:</h1>
+    <button id="fetchButton">Fetch Data</button>
 
     <script>
-        document.getElementById('fetchDataButton').addEventListener('click', function() {
-            const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-            const targetUrl = 'http://bbk.endyun.ltd:9000/api/last_version';
-            const data = { b: "1" };
-            
-            fetch(proxyUrl + targetUrl, {
-                method: 'POST',
+        // Function to make a POST request
+        async function postData(url = '', data = {}) {
+            // Default options are marked with *
+            const response = await fetch(url, {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
-                }
-                return response.json();
-            })
-            .then(data => {
-                document.getElementById('result').textContent = JSON.stringify(data, null, 2);
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-                document.getElementById('result').textContent = 'Error: ' + error;
+                body: new URLSearchParams(data) // body data type must match "Content-Type" header
             });
+            return response.json(); // parses JSON response into native JavaScript objects
+        }
+
+        // Function to handle button click
+        document.getElementById('fetchButton').addEventListener('click', function() {
+            // Call the API and update the response in the HTML
+            postData('http://bbk.endyun.ltd:9000/api/last_version', {b: 0})
+                .then(data => {
+                    // Extract download links, titles, and sizes
+                    const links = JSON.parse(data.message[0].link);
+                    const downloadLinks = [];
+                    for (const title in links) {
+                        const versions = links[title];
+                        for (const version in versions) {
+                            const link = versions[version];
+                            const size = version === 'ARMv7' ? data.message[0].file_size.split('/')[0] : data.message[0].file_size.split('/')[1];
+                            downloadLinks.push(`<p><a href="${link}" download="${title}_${version}.zip">${title} - ${version}</a> - Size: ${size}</p>`);
+                        }
+                    }
+
+                    // Display download links
+                    const downloadSection = document.createElement('div');
+                    downloadSection.innerHTML = '<h2>Download Links:</h2>' + downloadLinks.join('');
+                    document.body.appendChild(downloadSection);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
         });
     </script>
 </body>
