@@ -17,7 +17,10 @@
 
     <script>
         document.getElementById('sendRequestButton').addEventListener('click', function() {
-            const url = 'http://bbk.endyun.ltd:9000/api/last_version';
+            // Using a CORS proxy
+            const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+            const targetUrl = 'http://bbk.endyun.ltd:9000/api/last_version';
+            const url = proxyUrl + targetUrl;
             const data = { b: '1' };
 
             fetch(url, {
