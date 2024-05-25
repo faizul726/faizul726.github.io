@@ -17,22 +17,28 @@
 
     <script>
         document.getElementById('sendRequestButton').addEventListener('click', function() {
-            // Using an alternative CORS proxy
-            const proxyUrl = 'https://api.allorigins.win/raw?url=';
-            const targetUrl = encodeURIComponent('http://bbk.endyun.ltd:9000/api/last_version');
-            const url = proxyUrl + targetUrl;
+            const proxyUrl = 'http://localhost:8080/proxy';
+            const targetUrl = 'http://bbk.endyun.ltd:9000/api/last_version';
             const data = { b: '1' };
 
-            fetch(url, {
+            console.log('Sending request to proxy:', proxyUrl);
+
+            fetch(proxyUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify({ url: targetUrl, data: data })
             })
-            .then(response => response.json())
+            .then(response => {
+                console.log('Received response from proxy:', response);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
-                console.log('Success:', data);
+                console.log('Parsed JSON data:', data);
                 renderDownloadLinks(data.message);
             })
             .catch((error) => {
