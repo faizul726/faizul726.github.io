@@ -12,10 +12,11 @@
 
     <script>
         document.getElementById('fetchDataButton').addEventListener('click', function() {
-            const url = 'https://bbk.endyun.ltd:9000/api/last_version'; // Attempt to use HTTPS
+            const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+            const targetUrl = 'http://bbk.endyun.ltd:9000/api/last_version';
             const data = { b: "1" };
             
-            fetch(url, {
+            fetch(proxyUrl + targetUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
