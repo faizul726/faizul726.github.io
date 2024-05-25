@@ -22,11 +22,17 @@
                 },
                 body: JSON.stringify(data)
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
             .then(data => {
                 document.getElementById('result').textContent = JSON.stringify(data, null, 2);
             })
             .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
                 document.getElementById('result').textContent = 'Error: ' + error;
             });
         });
