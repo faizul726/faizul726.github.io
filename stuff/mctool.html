@@ -3,91 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API POST Request Example</title>
-    <style>
-        .version {
-            margin-bottom: 20px;
-        }
-    </style>
+    <title>API Interaction</title>
 </head>
 <body>
-    <h1>Download Links</h1>
-    <button id="sendRequestButton">Fetch Latest Versions</button>
-    <div id="response"></div>
+    <h1>Get Last Version</h1>
+    <button id="fetchDataButton">Fetch Data</button>
+    <pre id="result"></pre>
 
     <script>
-        document.getElementById('sendRequestButton').addEventListener('click', function() {
-            const proxyUrl = 'http://localhost:8080/proxy';
-            const targetUrl = 'http://bbk.endyun.ltd:9000/api/last_version';
-            const data = { b: '1' };
-
-            console.log('Sending request to proxy:', proxyUrl);
-
-            fetch(proxyUrl, {
+        document.getElementById('fetchDataButton').addEventListener('click', function() {
+            const url = 'http://bbk.endyun.ltd:9000/api/last_version';
+            const data = { b: "1" };
+            
+            fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ url: targetUrl, data: data })
+                body: JSON.stringify(data)
             })
-            .then(response => {
-                console.log('Received response from proxy:', response);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
-                console.log('Parsed JSON data:', data);
-                renderDownloadLinks(data.message);
+                document.getElementById('result').textContent = JSON.stringify(data, null, 2);
             })
-            .catch((error) => {
-                console.error('Error:', error);
-                document.getElementById('response').innerText = 'Error: ' + error;
+            .catch(error => {
+                document.getElementById('result').textContent = 'Error: ' + error;
             });
         });
-
-        function renderDownloadLinks(versions) {
-            const responseDiv = document.getElementById('response');
-            responseDiv.innerHTML = ''; // Clear previous content
-
-            versions.forEach(version => {
-                const versionDiv = document.createElement('div');
-                versionDiv.className = 'version';
-
-                const versionTitle = document.createElement('h2');
-                versionTitle.innerText = `Version: ${version.version_all} (Beta: ${version.is_beta})`;
-                versionDiv.appendChild(versionTitle);
-
-                const updateTime = document.createElement('p');
-                updateTime.innerText = `Update Time: ${new Date(version.update_time).toLocaleString()}`;
-                versionDiv.appendChild(updateTime);
-
-                const fileSize = document.createElement('p');
-                fileSize.innerText = `File Size: ${version.file_size}`;
-                versionDiv.appendChild(fileSize);
-
-                const links = JSON.parse(version.link);
-                for (const [source, architectures] of Object.entries(links)) {
-                    const sourceTitle = document.createElement('h3');
-                    sourceTitle.innerText = source;
-                    versionDiv.appendChild(sourceTitle);
-
-                    for (const [arch, url] of Object.entries(architectures)) {
-                        const link = document.createElement('a');
-                        link.href = url;
-                        link.innerText = `${source} (${arch})`;
-                        link.target = '_blank';
-                        versionDiv.appendChild(link);
-
-                        const lineBreak = document.createElement('br');
-                        versionDiv.appendChild(lineBreak);
-                    }
-                }
-
-                responseDiv.appendChild(versionDiv);
-            });
-        }
     </script>
 </body>
 </html>
