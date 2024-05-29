@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Cost Calculator</title>
+    <script>
+        function calculate() {
+            // Get input values
+            let productPrice = parseFloat(document.getElementById('productPrice').value) || 0;
+            let usdtRate = parseFloat(document.getElementById('usdtRate').value) || 0;
+
+            // Calculate Redotpay USD
+            let rdtUsd = productPrice + (productPrice * 0.01);
+            document.getElementById('rdtUsd').innerHTML = `<strong>$${rdtUsd.toFixed(2)}</strong> = ${productPrice.toFixed(2)} + ${(productPrice * 0.01).toFixed(2)}`;
+
+            // Calculate Binance P2P w/ fee
+            let binanceUsdt = rdtUsd + 0.05 + 0.33;
+            document.getElementById('binanceUsdt').innerHTML = `<strong>${binanceUsdt.toFixed(2)}</strong> = ${rdtUsd.toFixed(2)} + 0.05 + 0.33`;
+
+            // Calculate Final cost
+            let finalCost = (binanceUsdt * usdtRate) + ((binanceUsdt * usdtRate) * 0.0185);
+            document.getElementById('finalCost').innerHTML = `<strong>${finalCost.toFixed(2)}</strong> = ${(binanceUsdt * usdtRate).toFixed(2)} + ${((binanceUsdt * usdtRate) * 0.0185).toFixed(2)}`;
+
+            // Round final cost to nearest value ending in 0 or 5
+            let roundedFinalCost = Math.ceil(finalCost / 5) * 5;
+            document.getElementById('roundedFinalCost').innerHTML = `<strong>৳${roundedFinalCost.toFixed(0)}</strong>`;
+            
+            // RDT COST
+            let rdtOnlyCost = (rdtUsd * usdtRate) * 1.0185;
+            document.getElementById('rdtOnlyCost').innerHTML = `<strong>${rdtOnlyCost.toFixed(2)}</strong> = ${(rdtUsd * usdtRate).toFixed(2)} + ${((rdtUsd * usdtRate) * 0.0185).toFixed(2)}`;
+        }
+        function withCashoutFeeCalc() {
+            // Get input value for Y
+            let withCashoutFee = parseFloat(document.getElementById('withCashoutFee').value) || 0;
+
+            // Calculate the output value which when 1% is added gives Y
+            let outputValue = withCashoutFee / 1.0185;
+            document.getElementById('withCashoutFeeOutput').innerHTML = `<strong>৳${outputValue.toFixed(2)}</strong>`;
+        }
+    </script>
+</head>
+<body>
+<h2>Single purchase crypto cost calculator (Bkash)</h2>
+<h6>Made using ChatGPT 4o | 20240520_2034</h6>
+    <h6>Last updated: 20240529_1112</h6>
+    <div>
+        <label for="productPrice">Product price ($): </label>
+        <input type="number" id="productPrice" name="productPrice" step="0.01" oninput="calculate()">
+    </div><br>
+    <div>
+        <label for="usdtRate">USDT rate (৳): </label>
+        <input type="number" id="usdtRate" name="usdtRate" step="0.01" oninput="calculate()">
+    </div>
+    <br><hr><br>
+    <p>Redotpay USD: <span id="rdtUsd"></span></p>
+    <p>Binance P2P w/ service charge + BEP20 network fee: <span id="binanceUsdt"></span></p>
+    <p>Final cost: <span id="finalCost"></span></p>
+    <p>Rounded final cost: <span id="roundedFinalCost"><strong></strong></span></p><br>
+    <p>Only RedotPay USDT cost: <span id="rdtOnlyCost"><strong></strong></span></p>
+    
+    <br><p><i><s>Alternatively, if bkash cashout fee is 1.85% you can simply add 3.897185% to your product price and multiply it by dollar rate. You will get all cost including cashout fee.</s></i></p>
+    <p><i><s>If product price is 10. The math would be: (10+3.897185%) this will give you the charge. But this excludes $0.05 extra charge so always load a bit higher.</s></i></p>
+<br><hr><br>
+
+<h2>w/ Cashout Fee Calculator</h2>
+<div>
+    <label for="withCashoutFee">Spend amount: </label>
+    <input type="number" id="withCashoutFee" step="0.01" oninput="withCashoutFeeCalc()">
+</div><br>
+<p>Bkash cost: <span id="withCashoutFeeOutput"></span></p>
+</body>
+</html>
