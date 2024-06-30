@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Release Assets</title>
+</head>
+<body>
+    <h1>GitHub Release Assets</h1>
+    <div id="assets"></div>
+
+    <script>
+        async function fetchReleaseData() {
+            const apiUrl = 'https://api.github.com/repos/mcpebd/mcpebd/releases';
+            try {
+                const response = await fetch(apiUrl);
+                const releases = await response.json();
+                displayAssets(releases[0].assets);
+            } catch (error) {
+                console.error('Error fetching release data:', error);
+            }
+        }
+
+        function displayAssets(assets) {
+            const assetsContainer = document.getElementById('assets');
+            assets.forEach(asset => {
+                const assetElement = document.createElement('div');
+                assetElement.innerHTML = `<p>${asset.name}: ${asset.download_count} downloads</p>`;
+                assetsContainer.appendChild(assetElement);
+            });
+        }
+
+        fetchReleaseData();
+    </script>
+</body>
+</html>
