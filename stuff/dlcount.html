@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Release Assets</title>
+    <title>dlcount</title>
 </head>
 <body>
-    <h1>GitHub Release Assets</h1>
+    <h1>MCPE Downloads</h1>
     <div id="assets"></div>
 
     <script>
@@ -25,12 +25,13 @@
             const assetsContainer = document.getElementById('assets');
             assets.forEach(asset => {
                 const assetElement = document.createElement('div');
-                assetElement.innerHTML = `<p>${asset.name}: ${asset.download_count} downloads</p>`;
+                assetElement.innerHTML = `<p><b>${asset.name}</b>: ${asset.download_count} times</p>`;
                 assetsContainer.appendChild(assetElement);
             });
         }
 
         fetchReleaseData();
     </script>
+    <img alt="Total Downloads" src="https://img.shields.io/github/downloads/mcpebd/mcpebd/total?label=Total%20Downloads&color=0099FF&style=flat">
 </body>
 </html>
