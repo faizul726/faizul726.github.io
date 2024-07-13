@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>MCPE Downloads</h1>
-        <img alt="Total Downloads" src="https://img.shields.io/github/downloads/mcpebd/mcpebd/total?label=Total%20Downloads&color=0099FF&style=flat">
+    <img alt="Total Downloads" src="https://img.shields.io/github/downloads/mcpebd/mcpebd/total?label=Total%20Downloads&color=0099FF&style=flat">
     <div id="assets"></div>
 
     <script>
@@ -24,15 +24,39 @@
 
         function displayAssets(assets) {
             const assetsContainer = document.getElementById('assets');
+            const versionGroups = {};
+
             assets.forEach(asset => {
-                const assetElement = document.createElement('div');
-                assetElement.innerHTML = `<p><b>${asset.name}</b>: ${asset.download_count} times</p>`;
-                assetsContainer.appendChild(assetElement);
+                const version = asset.name.match(/Minecraft_(\d+\.\d+\.\d+\.\d+)/)[1];
+                if (!versionGroups[version]) {
+                    versionGroups[version] = [];
+                }
+                versionGroups[version].push(asset);
+            });
+
+            const sortedVersions = Object.keys(versionGroups).sort((a, b) => b.localeCompare(a, undefined, { numeric: true, sensitivity: 'base' }));
+
+            sortedVersions.forEach((version, index) => {
+                const versionTitle = document.createElement('h2');
+                versionTitle.textContent = `${version}`;
+                assetsContainer.appendChild(versionTitle);
+
+                const sortedAssets = versionGroups[version].sort((a, b) => b.download_count - a.download_count);
+
+                sortedAssets.forEach(asset => {
+                    const assetElement = document.createElement('div');
+                    assetElement.innerHTML = `<p><a href="${asset.browser_download_url}" target="_blank">${asset.name}</a>: ${asset.download_count} times</p>`;
+                    assetsContainer.appendChild(assetElement);
+                });
+
+                // Add <hr> between version groups
+                if (index < sortedVersions.length - 1) {
+                    assetsContainer.appendChild(document.createElement('hr'));
+                }
             });
         }
 
         fetchReleaseData();
     </script>
-
 </body>
 </html>
