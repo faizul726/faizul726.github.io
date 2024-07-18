@@ -38,9 +38,15 @@
             const sortedVersions = Object.keys(versionGroups).sort((a, b) => b.localeCompare(a, undefined, { numeric: true, sensitivity: 'base' }));
 
             sortedVersions.forEach((version, index) => {
+                const totalDownloadCount = versionGroups[version].reduce((sum, asset) => sum + asset.download_count, 0);
+
                 const versionTitle = document.createElement('h2');
                 versionTitle.textContent = `${version}`;
                 assetsContainer.appendChild(versionTitle);
+
+                const downloadCountText = document.createElement('code');
+                downloadCountText.textContent = `Total Downloads: ${totalDownloadCount}`;
+                assetsContainer.appendChild(downloadCountText);
 
                 const sortedAssets = versionGroups[version].sort((a, b) => b.download_count - a.download_count);
 
