@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Remote Link Generator</title>
+  </head>
+  <body>
+    <a style="text-decoration:none" href="https://faizul726.github.io"><strong>⬅  Back to home</strong></a>
+    <h1>Minecraft Remote Link Generator</h1>
+    <code>Born on 20240810 | First time making something 90% by myself 🥹🖕🏿</code>
+    <hr>
+    <p>
+      <input type="text" id="otc" placeholder="Enter OTC">
+    </p>
+    <code style="color: blue; cursor: pointer;" onclick="clipboard()" id="otcLink"></code>
+    <i>You can click the link to copy.</i>
+    <script>
+      const otc = document.getElementById('otc');
+      const otcLink = document.getElementById('otcLink');
+
+      otc.oninput = function() {
+        otcLink.textContent = 'aka.ms/remoteconnect?otc=' + otc.value;
+      }
+
+      function clipboard() {
+        navigator.clipboard.writeText(otcLink.textContent);
+      }
+    </script>
+  </body>
+</html>
