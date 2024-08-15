@@ -6,6 +6,7 @@ body {
     vertical-align: bottom;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    margin-right: 8px;
 }
 a {
     text-decoration: none;
