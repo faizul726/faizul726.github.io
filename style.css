@@ -1,0 +1,17 @@
+body {
+    font-family: system-ui;
+}
+.emoji-stuff {
+    width: 1.125em;
+    vertical-align: bottom;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+a {
+    text-decoration: none;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+}
