@@ -7,8 +7,9 @@
 </head>
 <body>
     <a style="text-decoration:none" href="https://faizul726.github.io"><strong>⬅  Back to home</strong></a>
-    <h1>MCPE Downloads</h1>
+    <h1>Unofficial Minecraft Patched Repo (archived)</h1>
     <img alt="Total Downloads" src="https://img.shields.io/github/downloads/mcpebd/mcpebd/total?label=Total%20Downloads&color=0099FF&style=flat">
+    <br>    <code>This page is no longer being maintained. Please use <a href="https://mcpebd.github.io">mcpebd.github.io</a> (20241014)</code> 
     <div id="assets"></div>
 
     <script>
@@ -36,9 +37,18 @@
             const versionGroups = {};
 
             assets.forEach(asset => {
+                // Extract version from the asset name or the release tag
                 const versionMatch = asset.name.match(/Minecraft_(\d+\.\d+\.\d+\.\d+)/);
+                const tagMatch = asset.name.match(/^(\d+\.\d+\.\d+\.\d+)/);
+
+                let version;
                 if (versionMatch) {
-                    const version = versionMatch[1];
+                    version = versionMatch[1];
+                } else if (tagMatch) {
+                    version = tagMatch[1];
+                }
+
+                if (version) {
                     if (!versionGroups[version]) {
                         versionGroups[version] = [];
                     }
