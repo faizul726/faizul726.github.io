@@ -3,6 +3,7 @@
 - Added custom IObit Unlocker path support.
 - Added interruption check.
 - Added restore confirmation.
+- Added changelog for update checker.
 - Added an easter egg.
 - Fixed colors in some texts.
 - Fixed RESTORELIST variable.
