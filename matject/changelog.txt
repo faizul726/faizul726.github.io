@@ -3,8 +3,8 @@
 - Added custom IObit Unlocker path support.
 - Added interruption check.
 - Added restore confirmation.
-- Added changelog for update checker.
 - Added an easter egg.
+- Update checker now shows the changelog.
 - Fixed colors in some texts.
 - Fixed RESTORELIST variable.
 - Fixed an issue with custom Minecraft app path toggle.
