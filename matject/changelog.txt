@@ -1,0 +1,10 @@
+Added custom Minecraft launcher support
+Added custom Minecraft data path support
+Added custom IObit Unlocker path support
+Added interruption check
+Added restore confirmation
+Added an easter egg
+Fixed colors in some texts
+Fixed RESTORELIST variable
+Fixed an issue with custom Minecraft app path toggle
+Other minor bug fixes
