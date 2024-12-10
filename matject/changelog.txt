@@ -1,11 +1,10 @@
-- Added custom Minecraft launcher support.
-- Added custom Minecraft data path support.
-- Added custom IObit Unlocker path support.
-- Added interruption check.
-- Added restore confirmation.
-- Added an easter egg.
-- Update checker now shows the changelog.
-- Fixed colors in some texts.
-- Fixed RESTORELIST variable.
-- Fixed an issue with custom Minecraft app path toggle.
-- Other minor bug fixes.
+  Added Minecraft Preview support.
+  matjectNEXT now can be used without DEBUG MODE.
+  Improved matjectNEXT functionality.
+  Improved extract speed by using <code>tar</code>.
+  Improved settings functionality.
+  Improved backup ZIP check.
+  Fixed Dynamic Restore comparison.
+  Fixed OLDVERSION variable.
+  Delete Backups folder if empty.
+  Other minor changes.
