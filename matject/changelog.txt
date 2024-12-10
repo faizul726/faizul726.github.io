@@ -1,10 +1,12 @@
-  Added Minecraft Preview support.
-  matjectNEXT now can be used without DEBUG MODE.
-  Improved matjectNEXT functionality.
-  Improved extract speed by using <code>tar</code>.
-  Improved settings functionality.
-  Improved backup ZIP check.
-  Fixed Dynamic Restore comparison.
-  Fixed OLDVERSION variable.
-  Delete Backups folder if empty.
-  Other minor changes.
+Released on: Dec 10, 2024
+
+Added Minecraft Preview support.
+matjectNEXT now can be used without DEBUG MODE.
+Improved matjectNEXT functionality.
+Improved extract speed by using <code>tar</code>.
+Improved settings functionality.
+Improved backup ZIP check.
+Fixed Dynamic Restore comparison.
+Fixed OLDVERSION variable.
+Delete Backups folder if empty.
+Other minor changes.
