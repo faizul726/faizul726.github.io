@@ -11,3 +11,4 @@ Released on: Dec 23, 2024
 - Should no longer cause crashes when folder name contains space.
 - Should no longer fully exit if something goes wrong.
 - Preview mode now is automatically disabled when not installed.
+- Other minor changes.
