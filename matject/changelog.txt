@@ -1,8 +1,8 @@
 Released on: Dec 23, 2024
 - Added zipped materials support for auto method.
-- Added new settings: Don't open folder automatically
+- Added new settings: Don't open folder automatically.
 - Added loading text [not everywhere]
-- Added reset settings option
+- Added reset settings option.
 - Added Drop to shell [needs debug mode]
 - Can now make shortcuts.
 - New icon if using shortcut.
