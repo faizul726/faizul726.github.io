@@ -1,11 +1,13 @@
-Released on: Dec 10, 2024
-- Added Minecraft Preview support.
-- matjectNEXT now can be used without DEBUG MODE.
-- Improved matjectNEXT functionality.
-- Improved extract speed by using tar.
-- Improved settings functionality.
-- Improved backup ZIP check.
-- Fixed Dynamic Restore comparison.
-- Fixed OLDVERSION variable.
-- Delete Backups folder if empty.
-- Other minor changes.
+Released on: Dec 23, 2024
+- Added zipped materials support for auto method.
+- Added new settings: Don't open folder automatically
+- Added loading text [not everywhere]
+- Added reset settings option
+- Added Drop to shell [needs debug mode]
+- Can now make shortcuts.
+- New icon if using shortcut.
+- Optimized folder opening.
+- Optimized update checker.
+- Should no longer cause crashes when folder name contains space.
+- Should no longer fully exit if something goes wrong.
+- Preview mode now is automatically disabled when not installed.
