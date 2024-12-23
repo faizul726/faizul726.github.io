@@ -1,4 +1,5 @@
 Released on: Dec 23, 2024
+- Added subpack support for auto method.
 - Added zipped materials support for auto method.
 - Added new settings: Don't open folder automatically.
 - Added loading text [not everywhere]
