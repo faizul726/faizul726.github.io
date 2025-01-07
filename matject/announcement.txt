@@ -1,1 +1,1 @@
-Test announcement with perhaps... %exitmsg%!RED!C!GRN!O!BLU!L!YLW!O!CYN!R!RED!S!RST!
+Test announcement with perhaps... %exitmsg%!RED!C!GRN!O!BLU!L!YLW!O!CYN!R!RED!S!RST!!exitmsg!
