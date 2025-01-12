@@ -4,7 +4,6 @@ import { bnLocale } from './locales/bn.ts'
 
 export default defineConfig({
   lang: 'en-US',
-  base: '/matject/',
   markdown: {
     image: {lazyLoading: true}
   },
