@@ -9,4 +9,4 @@ Special thanks to the creator of [Newb X Legacy](https://github.com/devendrn/new
 [Donate to devendrn](https://ko-fi.com/devendrn)
 
 
-**[How to use Matject](/docs/downloading-from-github)**
+**[How to use Matject?](/docs/downloading-from-github)**
