@@ -29,7 +29,6 @@ jobs:
         with:
           node-version: 20
           cache: npm # or pnpm / yarn
-          node-version-file: 'matject/package.json'
           cache-dependency-path: 'matject/package-lock.json'
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -47,14 +46,10 @@ jobs:
           path: matject/.vitepress/dist
 
   # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: faizul726.github.io/matject
-    needs: build
-    runs-on: ubuntu-latest
-    name: Deploy
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          branch: main
+          folder: matject/.vitepress/dist
+          target: /matject

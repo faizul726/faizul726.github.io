@@ -7,3 +7,6 @@ It features dynamic restore [[?]](/docs/what-is-dynamic-restore), version detect
 Special thanks to the creator of [Newb X Legacy](https://github.com/devendrn/newb-x-mcbe) aka [devendrn](https://devendrn.github.io/) for allowing me to use to use their page as reference.  
 
 [Donate to devendrn](https://ko-fi.com/devendrn)
+
+
+**[How to use Matject](/docs/downloading-from-github)**
