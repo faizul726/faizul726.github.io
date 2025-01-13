@@ -7,3 +7,9 @@ npm run docs:build
 popd
 
 mv matject.bak/.vitepress/dist/* matject
+
+git add . 
+
+git commit -m "update /matject" 
+
+git push

@@ -27,8 +27,17 @@ You should only follow this guide if you don't have unmodified game files or los
 
 6. After confirmations it will open a file explorer window for you. Put the `materials_windows.zip` file there.  
 
+![alt text](image-36.png)  
+![alt text](image-37.png)  
+
+<br><br>  
+
 7. Close the window and confirm the backup replacement.  
+
+![alt text](image-38.png)
+
+<br><br>  
 
 8. When done, check if "Backup made on" date is changed...  
 
-![alt text](image-31.png)
+![alt text](image-39.png)

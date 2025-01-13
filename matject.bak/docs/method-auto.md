@@ -49,20 +49,24 @@ In this case, it will pick "newb-x-legacy-15.57-windows.mcpack"
 
 6. Confirm your choice by pressing **[Y]** for yes and **[N]** for no.  
 
-![alt text](image-15.png)
-
-<br><br>
+![alt text](image-15.png)  
 
 ::: details Note about subpacks...
 If chosen file has subpacks it will show you a list where you can select any one by entering its number.  
 
 ![alt text](image-18.png)  
 
-For example: If you write `6` and press **[ENTER]** it will pick the 5th item from the list.  
+For example: If you write `6` and press **[ENTER]** it will pick the 6th item from the list.  
 In this case, it will pick "rounded_clouds"  
 
-Keep in mind, you also have to select the same subpack from resource packs settings later to make sure the shader works as expected.  
+::: info Keep in mind
+You also have to select the same subpack from resource packs settings later to make sure the shader works as expected.  
 The names shown in the list and in resource packs settings may not be the same always. In that case, you can check manifest.json inside the provided file to get an idea of what each in the list do.  
+
+![alt text](image-40.png)  
+![alt text](image-41.png)  
+
+&nbsp;
 
 You can also write `/skip` and press **[ENTER]** and it will skip the subpack part  
 (only if you know what you're doing + it may cause shader to not work as expected.)
