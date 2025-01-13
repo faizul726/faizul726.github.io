@@ -1,0 +1,5 @@
+pushd matject.bak
+
+npm run docs:dev .
+
+popd

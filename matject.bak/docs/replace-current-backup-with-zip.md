@@ -1,4 +1,4 @@
-# Replace current backup using ZIP
+# Replace current backup with ZIP
 
 You should only follow this guide if you don't have unmodified game files or lost the backup.  
 

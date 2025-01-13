@@ -8,7 +8,7 @@ Means in some cases, it may not be able to tell something went wrong. Or not wor
 - Always get Matject from the [official GitHub repository](https://github.com/faizul726/matject)
 - YOU MUST BEGIN WITH ORIGINAL GAME FILES.  
 Or even if you restore, shaders will NOT go away.  
-If you don't have original files/already modified materials you can use [Replace current backup using ZIP](/docs/replace-current-backup-using-zip) in Matject.
+If you don't have original files/already modified materials you can use [Replace current backup with ZIP](/docs/replace-current-backup-with-zip) in Matject.
 - DO NOT modify `.settings`, `Backups`, `modules` folder without "proper knowledge"
 ::: details If you use Windows Defender/Microsoft Defender...
 * You can keep real time protection enabled

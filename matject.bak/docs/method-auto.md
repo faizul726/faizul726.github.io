@@ -6,14 +6,6 @@ The shader you want to use must meet some conditions.
 * It must be specifically for Windows. (**merged** should also work if you know what I mean)
 * Should support your Minecraft version. Or you will see invisible blocks or game might crash. (can be fixed using [material-updater](/docs/what-is-material-updater))
 * If it requires a resource pack, you should import and activate it.  
-
-&nbsp;
-
-"**You**" should also... <img style="display: inline; vertical-align: text-bottom;" width="28px" alt=":doggylaugh:" src="/stolen_emojis/doggylaugh.png" title="stolen from YSS discord server">
-* Have understanding of basic English. 
-* Be able to "read".
-* Have common sense.
-* Know that, "Command Prompt/Terminal ≠ Virus"
 :::
 
 <br>
@@ -105,7 +97,8 @@ Based on the situation, it will ask you 2 or 4 times. You have to accept all.
 
 <br><br>
 
-**Congratulations! You have applied a shader succesfully.**  
+## Congratulations!  
+**You have applied a shader succesfully.**  
 
 It's better to import the MCPACK and activate it if asked to do so.  
 
