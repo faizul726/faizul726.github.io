@@ -4,9 +4,18 @@ Matject is a batch script for Windows that utilizes [IObit Unlocker](https://www
   
 It features dynamic restore [[?]](/docs/what-is-dynamic-restore), version detection, automatic backups and [many more...](/docs/features)  
 
+::: info
 Special thanks to the creator of [Newb X Legacy](https://github.com/devendrn/newb-x-mcbe) aka [devendrn](https://devendrn.github.io/) for allowing me to use to use their page as reference.  
 
 [Donate to devendrn](https://ko-fi.com/devendrn)
+:::
 
+<br>
 
-**[How to use Matject?](/docs/downloading-from-github)**
+# Guide
+
+- If you have downloaded `matject-main.zip` already, **extract** it and see **[How to use Matject?](/docs/method-auto)**  
+
+Or...
+
+- If you're new to all of these see **[Requirements](/docs/requirements)**. 

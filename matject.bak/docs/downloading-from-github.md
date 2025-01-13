@@ -17,4 +17,4 @@ git clone https://github.com/faizul726/matject.git && cd matject
 ```
 <br>
 
-**[Next steps...](/docs/initial-setup)**
+**[Next steps...](/docs/first-setup)**

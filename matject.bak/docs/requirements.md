@@ -1,6 +1,7 @@
 # Requirements 
 
 ### Mandatory (must have)
+* Read [Important Notes](/docs/important-notes)
 * [IObit Unlocker](https://www.iobit.com/en/iobit-unlocker.php)
 * PowerShell (pre-installed/built-in on most Windows PCs)  
 

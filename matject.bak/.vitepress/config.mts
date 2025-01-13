@@ -3,6 +3,7 @@ import { enLocale } from './locales/en.ts'
 import { bnLocale } from './locales/bn.ts'
 
 export default defineConfig({
+  cleanUrls: true,
   lang: 'en-US',
   base: '/matject/',
   markdown: {
@@ -21,11 +22,11 @@ export default defineConfig({
       alt: "Logo"
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/devendrn/renderdragon-shaders' }
+      { icon: 'github', link: 'https://github.com/faizul726/matject' }
     ],
   },
   locales: {
     root: { label: 'English', lang: 'en', ...enLocale },
-    bn: { label: 'Bangla (বাংলা)', lang: 'bn', ...bnLocale }
+    bn: { label: 'Bangla (বাংলা) [WIP]', lang: 'bn', ...bnLocale }
   }
 })

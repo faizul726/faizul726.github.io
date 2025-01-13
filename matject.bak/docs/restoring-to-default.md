@@ -21,7 +21,7 @@ Matject can restore to default/remove shaders whenever you want.
 
 4. In the restore screen... 
 
-![alt text](image-31.png)
+![alt text](image-31.png)  
 
 Press **[1]** for dynamic restore.  
 Press **[2]** for full restore.  

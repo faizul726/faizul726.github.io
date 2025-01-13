@@ -1,0 +1,9 @@
+find matject -mindepth 1 -maxdepth 1 ! -name "screenshots" -exec rm -rf {} +
+
+pushd matject.bak
+
+npm run docs:build
+
+popd
+
+mv matject.bak/.vitepress/dist/* matject

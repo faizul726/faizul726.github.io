@@ -1,4 +1,4 @@
-# Initial setup
+# First setup
 
 1. Once the download is finished, extract the ZIP file  
 
@@ -14,8 +14,11 @@
 
 <br>
 
+If something like this shows up, click `Run` and optionally turn off "Always ask before opening this file" to avoid annoyance.  
 
-If something like this shows up, click `Run` and optionally turn off "Always ask before opening this file" to avoid annoyance.
+![alt text](image-34.png)
+
+<br><br>
 
 4. A screen like this should show up  
 

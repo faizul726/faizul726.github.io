@@ -3,8 +3,7 @@ import { defineConfig, type DefaultTheme } from 'vitepress'
 export const enLocale = defineConfig({  
   base: 'en',
   title: 'Matject Documentation',
-  description: "Unofficial documentation page for RenderDragon Shaders",
-  cleanUrls: true,
+  description: "Matject Guide and Documentation",
   themeConfig: {sidebar: {'/': sidebarShaders()}}
 })
 
