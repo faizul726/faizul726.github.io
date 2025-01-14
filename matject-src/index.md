@@ -12,10 +12,4 @@ Special thanks to the creator of [Newb X Legacy](https://github.com/devendrn/new
 
 <br>
 
-# Guide
-
-- If you have downloaded `matject-main.zip` already, **extract** it and see **[How to use Matject?](/docs/method-auto)**  
-
-Or...
-
-- If you're new to all of these see **[Requirements](/docs/requirements)**. 
+## [How to use?](/docs/guide-for-beginners)
