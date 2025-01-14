@@ -26,7 +26,7 @@ Matject can restore to default/remove shaders whenever you want.
 Press **[1]** for dynamic restore.  
 Press **[2]** for full restore.  
 
-Both are same. The only difference is how the task is done.  
+Both are the same. The only difference is how the task is done.  
 
 In simple words...  
 **Dynamic Restore** is fast. It only restores the files that were modified.  
@@ -43,7 +43,7 @@ In simple words...
 <br><br>
 
 6. As usual...
-Accept every admin permission requests.  
+Accept every admin permission request.  
 
 ![alt text](image-33.png)
 

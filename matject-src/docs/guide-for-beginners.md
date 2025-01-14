@@ -2,14 +2,14 @@
 # Guide for beginners  
 
 Hello there! <img style="display: inline; vertical-align: text-bottom;" width="24px" alt=":doggysmurk:" src="/stolen_emojis/doggysmurk.png" title="stolen from YSS discord server">  
-I know where you're here. So, let's get straight to the subject!  
+I know why you're here. So, let's get straight to the subject!  
 
 ::: tip Things you need to know!
 * Matject is a script to make using shaders on Minecraft: Bedrock Edition much easier.
 * **Absolutely zero** Command Prompt/Terminal knowledge is needed to use it!  
 All you have to do is press some keys to navigate.  
 * It automatically takes care of many things.  
-So, don't worry, just give it shader you want to use and it will work.
+So, don't worry; just give it theshader you want to use, and it will work.
 * It's 100% safe.  
 > You can know more about Matject on this documentation. Just explore!
 :::
@@ -20,10 +20,10 @@ So, don't worry, just give it shader you want to use and it will work.
 **Check requirements**  
 * Install **[IObit Unlocker](https://www.iobit.com/en/iobit-unlocker.php)**
 * Make sure you haven't modified Minecraft `material.bin` files before.  
-If you don't know what it means then most probably you haven't modified anything. So, don't worry.
-* Make sure you have **PowerShell** on your PC. (Most Windows PCs have PowerShell built-in)
+If you don't know what it means, then most probably you haven't modified anything. So, don't worry.
+* Make sure you have **PowerShell** on your PC. (Most Windows PCs have PowerShell built in)
 ::: details How to check if you have PowerShell?
-By searching `powershell` in start menu.  
+By searching `powershell` in the start menu.  
 
 ![alt text](image-43.png)  
 
@@ -69,15 +69,15 @@ Read it properly, write `yes` and press ENTER.
 > ![alt text](image-49.png)
 > ![alt text](image-47.png)  
 > &nbsp;
-> These are optional. You can Press [Y] for Yes or [N] for No to confirm your decision.  
+> These are optional. You can press [Y] for Yes or [N] for No to confirm your decision.  
 
 <br><br>
 
-6. If you are asked to Unlock WindowsApps like this...  
+6. If you are asked to unlock WindowsApps like this...  
 
 ![alt text](image-50.png)  
 
-Press [Y] to unlock WindowsApps folder. It will allow Matject to read content inside so that it can make backup.  
+Press [Y] to unlock the WindowsApps folder. It will allow Matject to see content inside so that it can make backup.  
 
 **Don't worry.** The folder doesn't contain any private information.  
 
@@ -98,7 +98,7 @@ Congratulations on making it this far!
 Now, let me show you how to apply a shader...  
 
 
-1. In the main screen, press [1] to use Auto method  
+1. In the main screen, press [1] to use the Auto method  
 
 ![alt text](image-52.png)  
 
@@ -111,13 +111,13 @@ Now, let me show you how to apply a shader...
 ::: details Can I put multiple MCPACK or ZIP files in the `MCPACKS` folder?  
 Yes, you can put all your favorite shaders in the folder.  
 
-For multiple files a list like this will show up,  
+For multiple files, a list like this will show up,  
 
 ![alt text](image-55.png)  
 
 You can write the number of the shader that you want to use and press ENTER.  
 
-Here, I wrote 3 and pressing enter will pick the 3rd shader from list named MLYX...
+Here, I wrote 3, and pressing enter will pick the 3rd shader from the list named MLYX...
 :::
 
 <br><br>
@@ -132,22 +132,22 @@ Here, I wrote 3 and pressing enter will pick the 3rd shader from list named MLYX
 
 ![alt text](image-57.png)  
 
-Here, I wrote 6 and pressing enter will pick 6th subpack from the list named rounded_clouds  
+Here, I wrote 6, and pressing enter will pick the 6th subpack from the list named rounded_clouds  
 
 ::: details What is subpack?  
 It's like settings for the shader. Many shaders come with options like these.  
 
 ::: details Keep in mind...
-You also have to select the same subpack from resource packs settings later to make sure the shader works as expected.  
-The names shown in the list and in resource packs settings may not be the same always. In that case, you can check manifest.json inside the provided file to get an idea of what each in the list do.  
+You also have to select the same subpack from resource pack settings later to make sure the shader works as expected.  
+The names shown in the list and in resource pack settings may not always be the same. In that case, you can check manifest.json inside the provided file to get an idea of what each in the list does.  
 
 ![alt text](image-40.png)  
 ![alt text](image-41.png)  
 
 &nbsp;
 
-You can also write `/skip` and press **[ENTER]** and it will skip the subpack part  
-(only if you know what you're doing + it may cause shader to not work as expected.)
+You can also write `/skip` and press **[ENTER]**. and it will skip the subpack part.  
+(only if you know what you're doing + it may cause the shader to not work as expected.)
 :::
 
 <br><br>
@@ -156,7 +156,7 @@ You can also write `/skip` and press **[ENTER]** and it will skip the subpack pa
 
 ![alt text](image-58.png)  
 
-Here, you can press [Y] or [N] to confirm injection (applying shader to Minecraft)  
+Here, you can press [Y] or [N] to confirm injection (applying shader to Minecraft).  
 
 <br><br>
 
@@ -168,7 +168,7 @@ Based on the situation, it will ask you 2 or 4 times.
 <br><br>  
 
 ## Congratulations!  
-**You have applied a shader succesfully.**  
+**You have applied a shader successfully.**  
 
 ![alt text](image-21.png)  
 
@@ -177,7 +177,7 @@ It's better to import the MCPACK and activate it if asked to do so.
 <br>
 
 ![alt text](image-40.png)  
-If you selected a subpack, make sure to activate the same subpack in settings (gear icon) of your shader in global resource packs.  
+If you selected a subpack, make sure to activate the same subpack in the settings (gear icon) of your shader in global resource packs.  
 
 <br><br>
 

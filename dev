@@ -1,4 +1,4 @@
-pushd matject.bak
+pushd matject-src
 
 npm run docs:dev .
 

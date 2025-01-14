@@ -1,12 +1,12 @@
 find matject -mindepth 1 -maxdepth 1 ! -name "screenshots" -exec rm -rf {} +
 
-pushd matject.bak
+pushd matject-src
 
 npm run docs:build
 
 popd
 
-mv matject.bak/.vitepress/dist/* matject
+mv matject-src/.vitepress/dist/* matject
 
 git add . 
 
