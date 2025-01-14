@@ -15,11 +15,12 @@ function sidebarShaders(): DefaultTheme.SidebarItem[] {
       items: [
         {text: 'What is Matject?', link: '/'},
         {text: 'Features', link: '/docs/features'},
-        {text: 'How it\'s different from BetterRenderDragon?', link: '/docs/how-its-different-from-betterrenderdragon'}
+        {text: 'How it\'s different from BetterRenderDragon?', link: '/docs/how-its-different-from-betterrenderdragon'},
+        {text: 'Guide for beginners (recommended)', link: '/docs/guide-for-beginners'}
       ]
     },
     {
-      text: '✅ How to use?',
+      text: 'How to use? (advanced)',
       collapsed: false,
       items: [
         {text: 'Important notes', link: '/docs/important-notes'},
@@ -27,7 +28,7 @@ function sidebarShaders(): DefaultTheme.SidebarItem[] {
         {text: 'Downloading from GitHub', link: '/docs/downloading-from-github'},
         {text: 'First setup', link: '/docs/first-setup'},
         {text: 'Using shader with Matject', link: '/docs/using-shader-with-matject'},
-        {text: 'Method 1: Auto (recommended)', link: '/docs/method-auto'},
+        {text: 'Method 1: Auto', link: '/docs/method-auto'},
         {text: 'Method 2: Manual', link: '/docs/method-manual'},
         {text: 'Method 3: matjectNEXT', link: '/docs/method-matjectnext'},
         {text: 'Restoring to default/removing shaders/uninstalling shaders', link: '/docs/restoring-to-default'}

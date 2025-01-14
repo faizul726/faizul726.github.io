@@ -21,7 +21,11 @@ With that being said, let's get started...
 
 <br><br>
 
-3. Open `matject`. 
+3. Open `matject`.  
+
+![alt text](image-42.png)  
+
+<br><br>
 
 4. In the main screen, press **[1]** for "Auto method".  
 
