@@ -4,13 +4,17 @@
 Hello there! <img style="display: inline; vertical-align: text-bottom;" width="24px" alt=":doggysmurk:" src="/stolen_emojis/doggysmurk.png" title="stolen from YSS discord server">  
 I know why you're here. So, let's get straight to the subject!  
 
+![alt text](image-61.png)
+
 ::: tip Things you need to know!
 * Matject is a script to make using shaders on Minecraft: Bedrock Edition much easier.
+* Matject ≠ Patched.
 * **Absolutely zero** Command Prompt/Terminal knowledge is needed to use it!  
 All you have to do is press some keys to navigate.  
 * It automatically takes care of many things.  
-So, don't worry; just give it theshader you want to use, and it will work.
+So, don't worry; just give it the shader you want to use, and it will work.
 * It's 100% safe.  
+* If you need help you can ask me in #newb-support of [Newb Discord Server](https://faizul726.github.io/newb-discord)
 > You can know more about Matject on this documentation. Just explore!
 :::
 
@@ -93,9 +97,11 @@ Press [Y] to unlock the WindowsApps folder. It will allow Matject to see content
 
 ## Applying a shader  
 
-Congratulations on making it this far!  
+**Congratulations on making it this far!**  
 
 Now, let me show you how to apply a shader...  
+
+<br>
 
 
 1. In the main screen, press [1] to use the Auto method  
@@ -114,10 +120,8 @@ Yes, you can put all your favorite shaders in the folder.
 For multiple files, a list like this will show up,  
 
 ![alt text](image-55.png)  
-
-You can write the number of the shader that you want to use and press ENTER.  
-
-Here, I wrote 3, and pressing enter will pick the 3rd shader from the list named MLYX...
+> You can write the number of the shader that you want to use and press ENTER.  
+> Here, I wrote 3, and pressing enter will pick the 3rd shader from the list named MLYX...
 :::
 
 <br><br>
@@ -131,8 +135,7 @@ Here, I wrote 3, and pressing enter will pick the 3rd shader from the list named
 4. If asked to choose a subpack, write its number and press ENTER.  
 
 ![alt text](image-57.png)  
-
-Here, I wrote 6, and pressing enter will pick the 6th subpack from the list named rounded_clouds  
+> Here, I wrote 6, and pressing enter will pick the 6th subpack from the list named rounded_clouds  
 
 ::: details What is subpack?  
 It's like settings for the shader. Many shaders come with options like these.  
@@ -156,7 +159,7 @@ You can also write `/skip` and press **[ENTER]**. and it will skip the subpack p
 
 ![alt text](image-58.png)  
 
-Here, you can press [Y] or [N] to confirm injection (applying shader to Minecraft).  
+> Here, you can press [Y] or [N] to confirm injection (applying shader to Minecraft).  
 
 <br><br>
 
@@ -168,6 +171,9 @@ Based on the situation, it will ask you 2 or 4 times.
 <br><br>  
 
 ## Congratulations!  
+
+<img src="../stolen_emojis/congratulations.png" width=200px></img>
+
 **You have applied a shader successfully.**  
 
 ![alt text](image-21.png)  
@@ -179,10 +185,10 @@ It's better to import the MCPACK and activate it if asked to do so.
 ![alt text](image-40.png)  
 If you selected a subpack, make sure to activate the same subpack in the settings (gear icon) of your shader in global resource packs.  
 
-<br><br>
+<br>
 
 
-### [How to remove/uninstall shaders?](/docs/restoring-to-default)
+## 🔄 You may want to see [How to remove/uninstall shaders?](/docs/restoring-to-default)
 
 <br><br>
 

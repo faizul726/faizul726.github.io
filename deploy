@@ -1,4 +1,6 @@
-find matject -mindepth 1 -maxdepth 1 ! -name "screenshots" -exec rm -rf {} +
+rm -rf ./matject/*
+
+cp -r ./matject-misc/* ./matject/
 
 pushd matject-src
 

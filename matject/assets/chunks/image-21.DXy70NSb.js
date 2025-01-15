@@ -1,1 +1,0 @@
-const s="/matject/assets/image-40.CSEu0tjj.png",t="/matject/assets/image-41.DZe-pl9o.png",a="/matject/assets/image-20.DnyJ5ePa.png",e="/matject/assets/image-21.U6P_gBqI.png";export{s as _,t as a,a as b,e as c};

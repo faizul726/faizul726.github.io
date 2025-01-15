@@ -1,0 +1,20 @@
+Released on: Jan 15, 2025
+- Added Matject updater.
+- Added multiple MCPACK/ZIP support for MCPACKS folder.
+- Added Matject tips.
+- Added "Show announcements" setting.
+- Added "Disable tips" setting.
+- Added "Run Matject as admin always" setting.
+- Added "Run IObit Unlocker as admin" setting to reduce admin permission requests.
+- Added manifest checker for matjectNEXT.
+- Added more bugs to fix later.
+- Auto mode now shows last MCPACK and subpack name.
+- Restore screen now shows restore date.
+- ZIPs now can also be opened as MCPACK.
+- IObit Unlocker messages are now automatically closed when Matject is run as admin.
+- Getting Minecraft details is now faster.
+- First run now asks to download material-updater.
+- curl should no longer be able to execute using variables.
+- Fixed a math related issue with update checker.
+- Cursor is now hidden where it's not needed.
+- Some UI improvements.
