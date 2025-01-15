@@ -172,7 +172,7 @@ Based on the situation, it will ask you 2 or 4 times.
 
 ## Congratulations!  
 
-<img src="../stolen_emojis/congratulations.png" width=200px></img>
+<img src="/stolen_emojis/congratulations.png" width=200px></img>
 
 **You have applied a shader successfully.**  
 
