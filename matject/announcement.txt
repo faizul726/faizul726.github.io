@@ -1,1 +1,1 @@
-Sample announcement message :]
+IF YOU'RE SEEING THIS. PLEASE STOP USING MATJECT FOR NOW. There is a rare bug when it deletes all files. Wait until I fix it.
