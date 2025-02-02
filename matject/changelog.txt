@@ -1,7 +1,11 @@
-THIS IS NOT A NEW UPDATE.
+Released on: Feb 02, 2025
 
-I RECENTLY DISCOVERED A CRITICAL BUG THAT DELETES ALL FILEs.  
+[CRITICAL BUG FIX UPDATE]
 
-If you're seeing this it's just to warn you. Please stop using Matject until the bug is fixed.
-
-If you know someone who uses Matject warn them also
+- Fixed a CRITICAL BUG that deletes all user files.
+- Added module verification to ensure reliability.
+- Matject no longer runs when tried to run without extracting.
+- Matject now uses more "specific" locations.
+- Fixed an issue with Matject updater.
+- Fixed an issue with full restore.
+- Other minor changes.

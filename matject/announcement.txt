@@ -1,1 +1,1 @@
-IF YOU'RE SEEING THIS. PLEASE STOP USING MATJECT FOR NOW. There is a rare bug when it deletes all files. Wait until I fix it.
+The delete bug has been fixed. Please update to v3.5.1 as soon as possible.
