@@ -1,2 +1,1 @@
-Minecraft v1.21.60 is supported. You can update the game if you want.
-2025-02-16
+[Feb 20, 2025] [v3.5.1] Minecraft Preview backups are not handled correctly. Please avoid using for MC Preview until it's fixed.
