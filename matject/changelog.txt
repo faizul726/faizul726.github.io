@@ -1,11 +1,14 @@
-Released on: Feb 02, 2025
+Released on: Feb 21, 2025
 
-[CRITICAL BUG FIX UPDATE]
-
-- Fixed a CRITICAL BUG that deletes all user files.
-- Added module verification to ensure reliability.
-- Matject no longer runs when tried to run without extracting.
-- Matject now uses more "specific" locations.
-- Fixed an issue with Matject updater.
-- Fixed an issue with full restore.
-- Other minor changes.
+- Fixed WindowsApps unlock failure
+- Fixed Minecraft Preview backup handling
+- Auto closing for IObit Unlocker no longer shows a separate window
+- Shortcuts can now open Matject in Windows Terminal
+- Added notification sound in some confirmation screens
+- Added a setting to force using PowerShell for extracting ZIPs
+- Added 10 new Matject tips
+- Added MIT license
+- Improved Matject opening behavior
+- Improved admin permission detection
+- Improved shortcut creation/deletion
+- Minor UI improvements
