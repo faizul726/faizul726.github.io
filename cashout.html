@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Percentage Calculator</title>
+  <style>
+    .row {
+      margin-bottom: 15px;
+    }
+    label {
+      display: inline-block;
+      width: 150px;
+    }
+    input {
+      width: 80px;
+    }
+    .result {
+      margin-left: 10px;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function updateResult(inputId, resultId, percentage) {
+      var inputElem = document.getElementById(inputId);
+      var resultElem = document.getElementById(resultId);
+      var finalValue = parseFloat(inputElem.value);
+      
+      if (!isNaN(finalValue)) {
+        // Calculate the original value X such that X + (percentage% of X) = finalValue
+        var originalValue = finalValue / (1 + (percentage / 100));
+        // Format to two decimals
+        originalValue = originalValue.toFixed(2);
+        resultElem.textContent = "Adding " + percentage + "% to " + originalValue + " equals " + finalValue;
+      } else {
+        resultElem.textContent = "";
+      }
+    }
+  </script>
+</head>
+<body>
+<code>Born on 20250226_1032</code>
+<br>
+<br>
+  <div class="row">
+  <div class="row">
+    <label>Nagad 1.25%</label>
+    <input type="number" id="input1" oninput="updateResult('input1', 'result1', 1.25)">
+    <span id="result1" class="result"></span>
+  </div>
+    <div class="row">
+    <label>iNagad/USSD 1.50%</label>
+    <input type="number" id="input2" oninput="updateResult('input2', 'result2', 1.5)">
+    <span id="result2" class="result"></span>
+  </div>
+  <br>
+    <label>Bkash 1.49%</label>
+    <input type="number" id="input3" oninput="updateResult('input3', 'result3', 1.49)">
+    <span id="result3" class="result"></span>
+  </div>
+  <div class="row">
+    <label>Bkash 1.89%</label>
+    <input type="number" id="input4" oninput="updateResult('input4', 'result4', 1.89)">
+    <span id="result4" class="result"></span>
+  </div>
+</body>
+</html>
