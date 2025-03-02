@@ -1,1 +1,1 @@
-[Feb 20, 2025] [v3.5.1] Minecraft Preview backups are not handled correctly. Please avoid using for MC Preview until it's fixed.
+[Mar 2, 2025] v1.21.62 is supported. Please update to Matject v3.5.2 if you haven't already.
