@@ -1,1 +1,1 @@
-[Mar 2, 2025] v1.21.62 is supported. Please update to Matject v3.5.2 if you haven't already.
+[Mar 08, 2025] BetterRenderDragon is back! Visit Matject GitHub page to learn more
