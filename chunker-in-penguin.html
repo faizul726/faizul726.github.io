@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chunker in Penguin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: -10px;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chunker in Penguin</h1>
+        <p style="text-align:center"><code>Page made by GitHub Copilot cuz me no dev<br>Born on 20250311_1357</code></p>
+        <form id="workflow-form">
+            <label for="filename">File Name:</label>
+            <input type="text" id="filename" name="filename" required>
+            <label for="fileurl">File URL:</label>
+            <input type="text" id="fileurl" name="fileurl" required>
+            <label for="targetversion">Target Version:</label>
+            <input type="text" id="targetversion" name="targetversion" required>
+            <label for="pat">Password:</label>
+            <input type="password" id="pat" name="pat" required>
+            <button type="submit" id="submit-button"><b>Start Converting</b></button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('workflow-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const filename = document.getElementById('filename').value;
+            const fileurl = document.getElementById('fileurl').value;
+            const targetversion = document.getElementById('targetversion').value;
+            const pat = document.getElementById('pat').value;
+            const submitButton = document.getElementById('submit-button');
+
+            const owner = 'faizul118';
+            const repo = 'penguin-chunker';
+
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<b>Convert started. waiting for workflow link...</b>';
+
+            fetch(`https://api.github.com/repos/${owner}/${repo}/actions/workflows/chunker-in-penguin.yml/dispatches`, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': 'Bearer ' + pat,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    ref: 'main',
+                    inputs: {
+                        FILENAME: filename,
+                        FILEURL: fileurl,
+                        TARGETVERSION: targetversion
+                    }
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    setTimeout(() => {
+                        fetch(`https://api.github.com/repos/${owner}/${repo}/actions/workflows/chunker-in-penguin.yml/runs`, {
+                            method: 'GET',
+                            headers: {
+                                'Accept': 'application/vnd.github.v3+json'
+                            }
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.workflow_runs && data.workflow_runs.length > 0) {
+                                const runId = data.workflow_runs[0].id;
+                                fetch(`https://api.github.com/repos/${owner}/${repo}/actions/runs/${runId}/jobs`, {
+                                    method: 'GET',
+                                    headers: {
+                                        'Accept': 'application/vnd.github.v3+json'
+                                    }
+                                })
+                                .then(response => response.json())
+                                .then(jobData => {
+                                    if (jobData.jobs && jobData.jobs.length > 0) {
+                                        const jobId = jobData.jobs[0].id;
+                                        const jobUrl = `https://github.com/${owner}/${repo}/actions/runs/${runId}/job/${jobId}`;
+                                        submitButton.innerHTML = `<b><a href="${jobUrl}" style="color: white; text-decoration: none;">See workflow progress</a></b>`;
+                                    } else {
+                                        submitButton.innerHTML = '<b>No jobs found for the latest run.</b>';
+                                    }
+                                    submitButton.disabled = false;
+                                })
+                                .catch(error => {
+                                    alert('Error fetching jobs: ' + error.message);
+                                    submitButton.innerHTML = '<b>Start Converting</b>';
+                                    submitButton.disabled = false;
+                                });
+                            } else {
+                                submitButton.innerHTML = '<b>No workflow runs found.</b>';
+                                submitButton.disabled = false;
+                            }
+                        })
+                        .catch(error => {
+                            alert('Error fetching workflow runs: ' + error.message);
+                            submitButton.innerHTML = '<b>Start Converting</b>';
+                            submitButton.disabled = false;
+                        });
+                    }, 2500);
+                } else {
+                    alert('Failed to trigger workflow: ' + response.statusText);
+                    submitButton.innerHTML = '<b>Start Converting</b>';
+                    submitButton.disabled = false;
+                }
+            })
+            .catch(error => {
+                alert('Error: ' + error.message);
+                submitButton.innerHTML = '<b>Start Converting</b>';
+                submitButton.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
