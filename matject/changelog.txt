@@ -1,14 +1,18 @@
-Released on: Feb 21, 2025
+Released on: Apr 16, 2025
 
-- Fixed WindowsApps unlock failure
-- Fixed Minecraft Preview backup handling
-- Auto closing for IObit Unlocker no longer shows a separate window
-- Shortcuts can now open Matject in Windows Terminal
-- Added notification sound in some confirmation screens
-- Added a setting to force using PowerShell for extracting ZIPs
-- Added 10 new Matject tips
-- Added MIT license
-- Improved Matject opening behavior
-- Improved admin permission detection
-- Improved shortcut creation/deletion
-- Minor UI improvements
+- Added auto version detection for material-updater [preview not supported]
+- Added direct write mode: Use normal move/delete commands instead of IObit Unlocker [sideloaded installation only]
+- Added new settings UI for material-updater
+- Added a brand new loading screen
+- Added a setting to change the number of materials processed per cycle for full restore
+- Added a secret game
+- Reworked full restore logic: It should work better now
+- Full restore no longer empties backup folder
+- A warning now will be shown if materials are ntot moved/deleted properly
+- MATERIALS folder now has to be empty before using auto/manual
+- Custom path toggle color will be orange if path is invalid
+- matjectNEXT now supports IObit Unlocker popup reduction
+- Updated about screen
+- Fixed non-English text display issues in some places
+- Fixed an issue with GameData location
+- Lots of small UI improvements
