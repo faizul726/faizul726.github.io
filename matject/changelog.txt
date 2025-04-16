@@ -8,7 +8,7 @@ Released on: Apr 16, 2025
 - Added a secret game
 - Reworked full restore logic: It should work better now
 - Full restore no longer empties backup folder
-- A warning now will be shown if materials are ntot moved/deleted properly
+- A warning now will be shown if materials are not moved/deleted properly
 - MATERIALS folder now has to be empty before using auto/manual
 - Custom path toggle color will be orange if path is invalid
 - matjectNEXT now supports IObit Unlocker popup reduction
