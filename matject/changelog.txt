@@ -1,5 +1,14 @@
 Released on: May 15, 2025
 
+[IMPORTANT NOTE]
+Matject Settings is heavily reworked in this update. So, your current settings won't be available after update and you will have to set settings again.
+You can take a screenshot of current settings so it's easier for you to set everything again.
+If you haven't used Matject Settings then this doesn't matter.
+
+*** Also you may run into some issues
+*** In that case you ask for help in Bedrock Graphics Discord server [make sure to send message in #matject channel]
+*** Link: faizul726.github.io/bedrockgraphics-discord 
+
 - Added Matject Exam
 - Added separate help pages for some places
 - Added new guiding texts in some places to make it more user friendly
