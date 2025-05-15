@@ -1,18 +1,27 @@
-Released on: Apr 16, 2025
+Released on: May 15, 2025
 
-- Added auto version detection for material-updater [preview not supported]
-- Added direct write mode: Use normal move/delete commands instead of IObit Unlocker [sideloaded installation only]
-- Added new settings UI for material-updater
-- Added a brand new loading screen
-- Added a setting to change the number of materials processed per cycle for full restore
-- Added a secret game
-- Reworked full restore logic: It should work better now
-- Full restore no longer empties backup folder
-- A warning now will be shown if materials are not moved/deleted properly
-- MATERIALS folder now has to be empty before using auto/manual
-- Custom path toggle color will be orange if path is invalid
-- matjectNEXT now supports IObit Unlocker popup reduction
-- Updated about screen
-- Fixed non-English text display issues in some places
-- Fixed an issue with GameData location
-- Lots of small UI improvements
+- Added Matject Exam
+- Added separate help pages for some places
+- Added new guiding texts in some places to make it more user friendly
+- Added target pack number setting for matjectNEXT
+- Added setting to automatically open Minecraft after matjectNEXT sync
+- Added setting to reapply the same pack for matjectNEXT
+- Added setting to scan only development or normal resource packs
+- Added progress bar for Full restore step 3
+- Added progress bar for Materials backup
+- Added Never Gonna Give You Up
+- Matject is now distributed under a license from YSS Group.
+- Matject Settings now stores most settings in single text file
+- matjectNEXT is no longer BETA
+- Full restore now shows an error if Full Restore didn't go well
+- Incomplete backup/injection is now handled separately for both editions of Minecraft
+- Direct write mode now uses COPY and DEL instead of MOVE
+- Improved Custom Minecraft app path setting
+- Improved resource pack scanning for matjectNEXT
+- Improved custom path inputs
+- Improved Matject startup logic
+- Moved a lot of extra information under debug mode
+- More robust file/folder creation in some cases
+- Fixed 'terminal to use' prompt of initial shortcut creation
+- Fixed an issue with dynamic restore when run IObit Unlocker as admin is on
+- Deprecated Auto and Manual method
