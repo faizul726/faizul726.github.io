@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Raw GitHub</title>
+  <script>
+    async function run() {
+      try {
+        // Read text from clipboard
+        const text = await navigator.clipboard.readText();
+        
+        // Validate it's a GitHub blob link
+        if (!text.startsWith("https://github.com/") || !text.includes("/blob/")) {
+          alert("Clipboard does not contain a valid GitHub blob URL.");
+          return;
+        }
+
+        // Convert to raw link
+        const rawLink = text.replace("https://github.com/", "https://raw.githubusercontent.com/").replace("/blob/", "/");
+
+        // Create a temporary anchor and trigger download
+        const fileName = rawLink.split('/').pop();
+        const a = document.createElement("a");
+        a.href = rawLink;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+
+        // Close the tab after short delay (to allow download)
+        setTimeout(() => window.close(), 1000);
+      } catch (e) {
+        alert("Failed to access clipboard or download file.\n" + e);
+      }
+    }
+
+    window.onload = run;
+  </script>
+</head>
+<body>
+</body>
+</html>
