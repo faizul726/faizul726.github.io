@@ -1,1 +1,1 @@
-[May 15, 2025] Matject v3.6.1 released
+[August 06, 2025] Most shaders are incompatible with 1.21.100 and material-updater does not work at the moment.
