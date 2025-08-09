@@ -1,6 +1,8 @@
-Released on: May 15, 2025
+Released on: August 09, 2025
 
 [IMPORTANT NOTE]
+# Last version of Matject
+
 Matject Settings is heavily reworked in this update. So, your current settings won't be available after update and you will have to set settings again.
 You can take a screenshot of current settings so it's easier for you to set everything again.
 If you haven't used Matject Settings then this doesn't matter.
