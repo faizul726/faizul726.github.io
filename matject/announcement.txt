@@ -1,1 +1,1 @@
-[Oct 31, 2025] Auto and Manual still works with Minecraft v1.21.120. Although you will need a v1.21.111+ compatible shader or you get invisible blocks [material-updater won't help]
+[May 28, 2026] Matject is probably deleting Minecraft app files in an unknown scenario. Please practice caution and use BetterRenderDragon instead if possible.
