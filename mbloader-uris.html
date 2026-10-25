@@ -34,9 +34,19 @@
       <br><b>Misc</b>
       <li><a href="mbloader://settings/allowMinecraftBeta">Enable "Allow Minecraft Beta"</a></li>
       <li><a href="mbloader://settings/disableBackupVerification">Enable "Disable Backup Verification"</a></li>
+      <li><a href="mbloader://settings/clearAnnouncementCache">Clear announcement cache</a></li>
       <br>
       <li><a href="mbloader://murgi/">murgi</a></li>
     </ul>
+
+    <label for="targetGameId">Target game ID (leave blank to reset):</label>
+    <input
+      id="targetGameId"
+      type="text"
+      pattern="[A-Za-z][A-Za-z0-9_]*(\.[A-Za-z][A-Za-z0-9_]*)+"
+      title="Enter a package ID such as com.example.game, or leave blank to reset."
+    >
+    <button type="button" id="launchIntent">Launch intent</button>
 
     <p>
       <a
@@ -48,7 +58,23 @@
       </a>
     </p>
 
-    <p>Credit: Duck.ai (provided by DuckDuckGo)</p>
+    <p>Credit: <a href="https://duck.ai">Duck.ai</a> (provided by DuckDuckGo)</p>
   </body>
+
+
+  <script>
+    document.getElementById("launchIntent").addEventListener("click", () => {
+      const input = document.getElementById("targetGameId");
+
+      if (!input.checkValidity()) {
+        input.reportValidity();
+        return;
+      }
+
+      const id = encodeURIComponent(input.value);
+      window.location.href =
+        `mbloader://settings/changeTargetGameId?id=${id}`;
+    });
+  </script>
 </html>
 
